@@ -1,0 +1,169 @@
+.container
+   margin: 0
+   display: flex
+   justify-content: center
+   align-items: center
+   width: 100vw
+   height: 97vh
+
+.single-card:hover
+   box-shadow: none
+
+.single-card
+   background: var(--color-white)
+   width: 80%
+   font-size: 0.88rem
+   display: flex
+   flex-flow: row nowrap
+   border-radius: var(--border-radius-card)
+   box-shadow: var(--box-shadow)
+
+.card-info
+   width: 50%
+   display: flex
+   flex-flow: column nowrap
+
+   .theme-toggler
+      width: 100%
+      position: relative
+
+      span
+         opacity: 1
+         position: absolute
+         top: 1rem
+         right: 1rem
+         cursor: pointer
+
+      span:hover
+         opacity: 0.5
+
+      span.active
+         opacity: 0
+
+   h2
+      width: 100%
+      margin-top: 2rem
+      text-align: center
+
+   form
+      margin-top: 4rem
+      display: flex
+      flex-flow: column nowrap
+      width: 100%
+      align-items: center
+      gap: 2rem
+
+      input
+         border: var(--border-input)
+         background: var(--color-white)
+
+      input[type="text"],input[type="password"]
+         width: 100%
+         padding: 1rem
+         border-radius: var(--border-radius-4)
+
+      .row
+         width: 90%
+         display: flex
+         flex-flow: row nowrap
+         gap: 1rem
+
+         input
+            width: 100%
+            padding: 1rem
+            border-radius: var(--border-radius-4)
+
+      button
+         font-family: Vazirmatn
+         width: 100%
+         color: white
+         border: 1px solid var(--color-dark-border)
+         border-radius: var(--border-radius-4)
+         padding: 1rem
+         cursor: pointer
+
+.bottom
+   margin: auto 0rem
+   h4
+      text-align: center
+      color: var(--color-primary)
+      margin: 1rem
+
+   h4:hover
+      opacity: 0.5
+
+.card-photo
+   width: 50%
+   position: relative
+
+   img
+      width: 100%
+      height: 100%
+      border-radius: var(--border-radius-img)
+      object-fit: fill
+   
+   span
+      position: absolute
+      top: 1rem
+      left: 1rem
+      color: var(--color-white)
+
+   span:hover
+         opacity: 0.5
+
+//* --------- detail ---------
+
+#card-signup
+   button
+      background: var(--color-success)
+
+#card-login
+   .row
+      width: 70%
+      justify-content: center
+
+   button
+      background: var(--color-primary)
+      margin-top: 2rem
+
+#card-password
+   button
+      background: var(--color-primary)
+
+   .code-btn
+      width: 50%
+      background: var(--color-danger)
+
+   form
+      margin-top: 2rem
+
+   p
+      margin: auto
+      width: 50%
+      text-align: center
+      color: var(--color-muted)
+
+   .card-photo
+      span
+         color: white
+
+#card-support
+   button
+      background: var(--color-primary)
+      // margin-top: 1rem
+
+   .row
+      width: 60%
+      justify-content: center
+      
+   textarea
+      border: var(--border-input)
+      font-family: Vazirmatn
+      color: var(--color-muted)
+      padding: 1rem
+      width: 100%
+      min-height: 10rem
+      border-radius: 1rem
+      text-align: center
+      line-height: 2
+      background: var(--color-white)

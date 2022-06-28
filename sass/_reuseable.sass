@@ -1,0 +1,180 @@
+.switch
+   font-size: 10px
+   position: relative
+   display: inline-block
+   width: 3.5em
+   height: 2em
+   input
+      opacity: 0
+      width: 0
+      height: 0
+   .slider
+      position: absolute
+      cursor: pointer
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: #ccc
+      transition: .4s
+      border-radius: 30px
+   .slider:before
+      position: absolute
+      content: ""
+      height: 1.4em
+      width: 1.4em
+      border-radius: 20px
+      left: 0.3em
+      bottom: 0.3em
+      background-color: white
+      transition: .4s
+   input:checked + .slider
+      background-color: var(--color-primary)
+   input:focus + .slider
+      box-shadow: 0 0 1px var(--color-primary)
+   input:checked + .slider:before
+      transform: translateX(1.5em)
+//* --------- description ---------
+/* From uiverse.io */
+.cbx
+   position: relative
+   top: 1px
+   width: 20px
+   height: 20px
+   border: 1px solid #c8ccd4
+   border-radius: 3px
+   vertical-align: middle
+   transition: background 0.1s ease
+   cursor: pointer
+   display: block
+   &:after
+      content: ''
+      position: absolute
+      top: 2px
+      left: 8px
+      width: 5px
+      height: 11px
+      opacity: 0
+      transform: rotate(45deg) scale(0)
+      border-right: 2px solid #fff
+      border-bottom: 2px solid #fff
+      transition: all 0.3s ease
+      transition-delay: 0.05s
+.lbl
+   margin-left: 5px
+   vertical-align: middle
+   cursor: pointer
+#cbx:checked ~ .cbx
+   border-color: transparent
+   background: var(--color-primary)
+   animation: jelly 0.6s ease
+#cbx:checked ~ .cbx:after
+   opacity: 1
+   transform: rotate(45deg) scale(1)
+.cntr
+   position: relative
+@keyframes jelly
+   from
+      transform: scale(1, 1)
+   30%
+      transform: scale(1.25, 0.75)
+   40%
+      transform: scale(0.75, 1.25)
+   50%
+      transform: scale(1.15, 0.85)
+   65%
+      transform: scale(0.95, 1.05)
+   75%
+      transform: scale(1.05, 0.95)
+   to
+      transform: scale(1, 1)
+.hidden-xs-up
+   display: none!important
+//* --------- description ---------
+
+.tab
+   // overflow: hidden
+   list-style-type: none
+   border-radius: var(--border-radius-4)
+   gap: 0.3rem
+
+   li
+      background: transparent
+
+   li:first-child
+      border-radius: 0 var(--border-radius-4) var(--border-radius-4) 0
+
+   li:last-child
+      border-radius: var(--border-radius-4) 0 0 var(--border-radius-4)
+
+   .tablinks
+      font-size: 14px
+      padding: .3rem 1rem
+      // background-color: var(--color-white)
+      float: right
+      outline: none
+      cursor: pointer
+      background: var(--color-white)
+      color: var(--color-dark)
+      // transition: var(--tran)
+      // border: 1px solid var(--color-white)
+      border: var(--border-input)
+      font-weight: lighter
+      // transition: var(--tran)
+      &:hover
+         opacity: 1
+         border: 1px solid var(--color-primary)
+
+      a,a:hover,a:link,a:visited
+         color: var(--color-dark)
+
+   .tablinks-firstchild
+      border-radius: 0 var(--border-radius-4) var(--border-radius-4) 0 !important
+   .tablinks-lastchild
+      border-radius: var(--border-radius-4) 0 0 var(--border-radius-4) !important
+
+   .activeTab
+      background-color: var(--color-primary)
+      color: white
+      border: 1px solid var(--color-primary)
+      
+      a,a:hover,a:link,a:visited
+         color: white
+
+.tabcontent
+   display: none
+///* --------- description ---------
+.message-error
+   color: var(--color-danger)
+   font-size: 14px
+.message-error-success
+   background: var(--color-success)
+
+
+.select-box-hint
+      text-align: center
+
+.select-box
+   margin: 0 auto
+   width: 100%
+   background: var(--color-white)
+   border: var(--border-input)
+   border-radius: 10px
+   text-align: center
+   font-weight: lighter
+
+
+.background-muted
+   background: var(--color-muted) !important
+
+.clr-danger
+   color: var(--color-danger) !important
+
+.clr-dark
+   color: var(--color-dark) !important
+
+.clr-muted
+   color: var(--color-muted) !important
+
+.clr-success
+   color: var(--color-success) !important

@@ -1,0 +1,782 @@
+.container-admin
+   display: flex
+   flex-direction: column
+   margin: 0 2rem
+
+.admin-header
+   padding: 0.5rem 1rem
+   align-items: center
+   justify-content: space-between
+   margin-top: 1rem
+   background: var(--color-white)
+   border-radius: var(--border-radius-2)
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   &:hover
+      box-shadow: none
+
+.admin__item
+   justify-self: center
+   align-self: center
+
+.admin--photo-backgroud
+   min-width: 50px
+
+.admin-profile:not(:first-child)
+   align-items: center
+
+.admin-profile
+   // min-width: 250px
+
+.admin-profile__item-welcome
+   font-size: 14px
+
+.theme-toggler-admin
+   border: var(--border-input)
+   border-radius: var(--border-radius-2)
+   background: var(--color-dark)
+   width: 100%
+   align-items: center
+   display: flex
+   flex-direction: column
+   span
+      opacity: 1
+      top: 1rem
+      right: 1rem
+      cursor: pointer
+      border-radius: var(--border-radius-2)
+   span:hover
+      color: var(--color-muted)
+      opacity: 0.5
+   span.active
+      opacity: 1
+      color: var(--color-white)
+
+.admin-profile__item
+   margin: 0 .5rem
+
+.admin__item-photo,.admin__item-photo
+   width: 50px
+   height: 50px
+   border-radius: 50%
+
+.admin__item-logout
+   font-size: 14px
+   color: var(--color-white)
+   background: var(--color-danger)
+   padding: 0.5rem 2rem
+   border-radius: var(--border-radius-4)
+   text-transform: uppercase
+   letter-spacing: 2px
+   border: none
+   transition: all 0.3s ease 0s
+   cursor: pointer
+   outline: none
+   a,a:hover,a:link,a:visited
+      color: var(--color-white) !important
+
+
+.notfication
+   cursor: pointer
+   color: black
+   text-decoration: none
+   position: relative
+   display: inline-block
+   border-radius: 2px
+   font-size: 9px
+
+.bell
+   font-size: 30px
+   transition: var(--tran)
+   &:hover
+      opacity: 0.5
+
+.badge
+   position: absolute
+   top: -2px
+   right: 0
+   padding: 1px 3.5px
+   border-radius: 50%
+   background-color: var(--color-danger)
+   color: var(--color-white)
+
+.admin-aside
+   margin-top: 1rem
+   width: 15%
+
+.admin-menu2
+   align-items: center
+   width: 100%
+   list-style-type: none
+   // gap: 1rem
+   cursor: pointer
+   li
+      font-size: 14px
+      padding: 0 1rem 
+      // background: var(--color-white)
+      // color: var(--color-dark)
+      a,a:hover,a:link,a:visited
+         color: var(--color-dark)
+   li:nth-child(2)
+      margin-right: auto
+   li:nth-child(3)
+      // border-left: 1px solid var(--color-dark) 
+      margin-left: auto
+      border-right: 1px solid var(--color-dark)
+   // li:nth-child(4)
+   //    margin-left: auto
+   // list-style: none
+   .selected
+      // background: var(--color-primary)
+      color: var(--color-primary)
+      a,a:hover,a:link,a:visited
+         color: var(--color-primary)
+      
+.admin-menu
+   transition: var(--tran)
+   background: var(--color-white)
+   border-radius: var(--border-radius-dashboard)
+   box-shadow: var(--box-shadow)
+   padding: 1rem
+   align-items: center
+   justify-content: center
+   text-align: center
+   list-style-type: none
+   width: 100%
+   max-height: 380px
+
+   &:hover
+      box-shadow: none
+
+   li:first-child
+      margin-top: .5em
+
+   li:last-child
+      margin-bottom: .5rem
+
+   li
+      padding: 0.5rem
+      border: var(--border-input)
+      width: 100%
+      text-align: center
+      border-radius: var(--border-radius-4)
+      font-size: 0.9rem
+      margin: 2rem auto
+      transition: var(--tran)
+      a:hover,a:visited,a:link
+         color: var(--color-dark)
+
+      span
+         display: none
+
+   li:hover
+      box-shadow: var(--box-shadow-2)
+
+   .selected:hover
+      box-shadow: none
+   .selected
+      background: var(--color-primary)
+      a:hover,a:visited,a:link
+         color: var(--color-white)
+
+.admin-pay--btnsave
+   background: var(--color-success)
+   color: var(--color-white)
+   padding: 0.5rem 1rem
+   width: 100%
+   border-radius: var(--border-radius-4)
+   transition: var(--tran)
+   margin-top: 1rem
+
+.admin-main
+   margin-top: 1rem
+   margin-right: 1rem
+   width: 100%
+   gap: 1rem
+   position: relative
+
+.main__top
+   margin-bottom: .5rem
+   width: 100%
+   align-items: center
+   gap: 1rem
+
+.search
+   font-size: 14px
+   color: var(--color-primary)
+
+#mySeacrhInput
+   width: 30%
+   direction: rtl
+   background: var(--color-white)
+   border-radius: var(--border-radius-2)
+   padding: .5rem 1rem
+   box-shadow: var(--box-shadow)
+   transition: all 300ms ease
+   border: none
+
+   &:hover
+      box-shadow: none
+
+#mySeacrhInput2
+   // width: 30%
+   gap: 1rem
+   direction: rtl
+   align-items: center
+   justify-content: center
+   // background: var(--color-white)
+   // border-radius: var(--border-radius-2)
+   // padding: .5rem 1rem
+   // box-shadow: var(--box-shadow)
+   // transition: all 300ms ease
+   // border: none
+
+   // &:hover
+   //    box-shadow: none
+
+
+
+#mySeacrhInput3
+   // width: 30%
+   direction: rtl
+   background: var(--color-white)
+   border-radius: var(--border-radius-2)
+   padding: .5rem 1rem
+   box-shadow: var(--box-shadow)
+   transition: all 300ms ease
+   // border: var(--border-input)
+
+   &:hover
+      box-shadow: none
+
+.table-tab2
+   align-items: center
+   list-style-type: none
+   margin-left: auto
+   font-size: 14px
+   color: var(--color-primary)
+   // box-shadow: var(--box-shadow)
+   // transition: var(--tran)
+   &:hover
+      box-shadow: none
+
+   li
+      background: var(--color-white)
+      padding: 0 0.5rem
+      // text-align: center
+      // margin: 0 2px
+      cursor: pointer
+
+   li:nth-child(3)
+      margin-left: auto
+
+
+.table-tab,.table-tab-message
+   list-style-type: none
+   margin-left: auto
+   font-size: 14px
+   color: var(--color-primary)
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+
+   &:hover
+      box-shadow: none
+
+   li
+      background: var(--color-white)
+      padding: 0.4rem 1rem
+      text-align: center
+      // margin: 0 2px
+      cursor: pointer
+
+   li:first-child
+      border-radius: 0 var(--border-radius-2) var(--border-radius-2) 0
+   
+   li:last-child
+      border-radius: var(--border-radius-2) 0 0 var(--border-radius-2)
+      
+      .activeTab
+         background: var(--color-primary)
+         color: var(--color-white)
+
+.admin-tab-content,.admin-tab-content-nomargin
+   position: relative
+   width: 100%
+   margin-bottom: 5rem
+
+.admin-tab-content-nomargin
+   margin-bottom: 0
+
+.admin-form-table
+   display: flex
+   // border-radius: var(--border-radius-dashboard)
+   // background: var(--color-white)
+   // box-shadow: var(--box-shadow)
+   // overflow: hidden
+   // position: absolute
+   display: none
+   width: 100%
+
+   &:hover
+      box-shadow: none
+
+.admin-table:hover
+   box-shadow: none
+
+.admin-table
+   // border-radius: var(--border-radius-dashboard)
+   background: var(--color-white)
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   width: 100%
+   font-weight: lighter
+   font-size: 14px
+   border-collapse: collapse
+   border-radius: var(--border-radius-dashboard)
+   table-layout: fixed
+   thead
+      font-size: 14px
+
+      tr
+         color: var(--color-primary)
+         border-bottom: 1px dotted #ccc
+
+   tr:nth-child(even)
+      background-color: var(--color-row)
+
+   th
+      a,a:hover,a:visited,a:link
+         color: var(--color-primary)
+
+   td,th
+      text-align: center
+      padding: 5px
+
+   td
+      color: var(--color-dark)
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      
+      .warning
+         color: var(--color-warning) !important
+         
+      .primary
+         color: var(--color-primary) !important
+
+      .failed
+         color: var(--color-failed) !important
+
+      .success
+         color: var(--color-success) !important
+
+      .expired
+         color: var(--color-expired) !important
+   td.noteditable
+      input
+         cursor: default
+         color: var(--color-muted)
+.admin-table-page
+   padding: 10px 20px 0px
+   border-top: dotted 1px #CCC
+   font-size: 12px
+   color: var(--color-dark)
+
+.admin-table-pagination
+   margin-top: 10px
+   padding-top: 15px
+   border-top: dotted 1px var(--color-dark)
+   font-size: 12px
+   color: var(--color-dark)
+
+.admin-add,.admin-update,.admin-delete
+   color: var(--color-white)
+   align-items: center
+   gap: 0.5rem
+   background: var(--color-white)
+   padding: .4rem 1rem
+   border-radius: var(--border-radius-2)
+   font-size: 12px
+   font-weight: lighter
+   cursor: pointer
+   // box-shadow: var(--box-shadow)
+   // transition: var(--tran)
+   // &:hover
+   //    box-shadow: none
+
+   span
+      color: var(--color-white)
+
+.table-checkbox
+   border: 2px solid var(--color-dark)
+   width: 15px
+   height: 15px
+   cursor: pointer
+   transition: var(--tran)
+
+   &:hover
+      border: 2px solid var(--color-primary)
+
+   &:checked
+      background: var(--color-primary)
+
+      &:hover
+         border: 2px solid var(--color-white)
+
+.table-select
+   align-items: center
+   justify-content: center
+
+   .switch
+      font-size: 8px
+
+tbody
+   .switch
+      font-size: 8px
+
+.selectallbody
+   display: flex
+   align-items: center
+   justify-content: center
+
+.paysetting
+   font-size: 16px
+   font-weight: lighter
+
+.paysetting__checkbox
+   width: 10px
+   height: 10px
+   border-radius: var(--border-radius-4)
+   border: var(--border-input)
+   cursor: pointer
+
+   &:hover
+      border: 1px solid var(--color-primary)
+
+   &:checked
+      background: var(--color-primary)
+
+      &:hover
+         opacity: 0.5
+
+//* --------- admin-message ---------
+
+.admin-message-panel
+   // width: auto
+   padding: 1rem
+   background: var(--color-white)
+   border-radius: var(--border-radius-dashboard)
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   font-size: 14px
+
+   &:hover
+      box-shadow: none
+
+.sendchoice
+   width: 10px
+   height: 10px
+   border: var(--border-input)
+
+.table-tab-message
+   box-shadow: none
+
+.admin-message--card
+   gap: 0.5rem
+   width: 100%
+
+.admin-message-card-content
+   gap: 1rem
+   justify-content: space-around
+   align-items: start
+   width: 100%
+   padding: 1rem
+
+.admin-message-tab
+   // display: none
+   max-height: 580px
+   overflow-y: auto
+   min-width: 330px
+   width: 100%
+   background: var(--color-white)
+   border-radius: var(--border-radius-dashboard)
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   padding: 1rem
+
+   &:hover
+      box-shadow: none
+
+#table-chat,#tab-alert
+   margin: 0
+
+.admin-message
+   min-width: 330px
+   width: 100%
+   padding: 1rem
+   background: var(--color-white)
+   border-radius: var(--border-radius-2)
+   box-shadow: var(--box-shadow)
+   box-shadow: var(--box-shadow)
+   gap: 1rem
+   transition: var(--tran)
+   flex-shrink: 2
+   
+   &:hover
+      box-shadow: none
+   h4
+      color: var(--color-primary)
+
+   .col-6
+      text-align: center
+      // margin: auto
+
+      label
+         font-size: 14px
+
+      input[type="radio"]
+         width: 10px
+         height: 10px
+         border: var(--border-input)
+         border-radius: var(--border-radius-4)
+         
+         &:hover
+            border: 1px solid var(--color-primary)
+            opacity: 0.5
+
+         &:checked
+            background: var(--color-primary)
+            opacity: 1
+
+   textarea
+      background: transparent
+      border: var(--border-input)
+      border-radius: var(--border-radius-2)
+      padding: 1rem
+
+   button
+      width: 50%
+      margin: 1rem auto 0
+      background: var(--color-primary)
+      color: var(--color-white)
+      border-radius: var(--border-radius-4)
+      padding: 0.7rem
+      font-family: Vazirmatn
+
+.admin-chat
+   font-size: 12px
+
+.admin-chat__item
+   gap: 0.3rem
+   margin: 0.2rem
+
+.admin-chat-other
+   direction: ltr
+   
+   .admin-chat__date
+      direction: rtl
+      flex-direction: row-reverse
+      
+   .admin-chat__body
+      width: fit-content
+      background: var(--color-dark)
+      border-radius: 0 var(--border-radius-2) var(--border-radius-2)
+      color: var(--color-white)
+      padding: 0.5rem
+   .admin-chat__name
+      color: var(--color-primary)
+
+.admin-chat-my
+   .admin-chat__body
+      width: fit-content
+      background: var(--color-mychat)
+      border-radius: var(--border-radius-2) 0 var(--border-radius-2) var(--border-radius-2)
+      color: var(--color-white)
+      padding: 0.5rem
+
+.admin-chat__header
+   align-items: center
+   gap: 0.3rem
+
+.admin-chat__date
+   font-weight: lighter
+   gap: 0.3rem
+   
+
+.admin-chat__photo
+   width: 30px
+   height: 30px
+   border-radius: var(--border-radius-4)
+
+   img
+      border-radius: var(--border-radius-4)
+
+.admin-chat__body
+   direction: rtl
+
+.admin-alert
+   list-style-type: none
+   margin: 0 auto
+   font-size: 14px
+
+.admin-alert_menu
+   justify-content: space-between
+   align-items: center
+   padding: 1rem
+
+.admin-alert_menu-checkbox
+   gap: .5rem
+
+.admin-alert_menu-button
+   font-size: 12px
+   font-weight: lighter
+   padding: 0.3rem 1rem
+   border-radius: var(--border-radius-4)
+
+.admin-alert__item
+   width: 100%
+   gap: 0.5rem
+
+.admin-alert__item:not(:last-child)
+   margin-bottom: 1rem
+
+.admin-alert__item-header
+   gap: .3rem
+   color: var(--color-muted)
+   justify-content: center
+   font-weight: lighter
+   border-bottom: 1px dotted #ccc
+   font-size: 12px
+
+.admin-alert__item-tenant
+   .admin-chat__photo
+      color: var(--color-admin)
+      img
+         min-width: 30px
+         height: 30px
+         border-radius: 50%
+
+.admin-alert__item-setting
+   span
+      font-size: 40px !important
+      color: var(--color-danger)
+
+.admin-alert__item-warning
+   span
+      font-size: 40px !important
+      color: var(--color-alert)
+
+.admin-alert__item-body
+   gap: 0.5rem
+
+   span
+      font-size: 50px
+
+.admin-alert__item-body-text
+   h4
+      color: var(--color-primary)
+
+   p
+      color: var(--color-dark)
+      font-weight: lighter
+      
+   .chat-file-link:visited
+      color: var(--color-danger)
+
+   .chat-file-link
+      color: var(--color-danger)
+
+
+.admin-alert__item-checkbox
+   gap: .5rem
+   align-items: center
+   width: 100%
+   h5
+      color: var(--color-muted) !important
+//* --------- description ---------
+   
+.admin-main-comingsoon
+   display: flex
+   justify-content: center
+   align-items: center
+   color: var(--color-primary)
+
+.adminAdd-body-top
+   width: 100%
+   padding-top: 1rem
+   padding-bottom: 1rem 
+   border-bottom: 1px solid #ccc
+   align-items: center
+   justify-content: space-around
+   text-align: center
+
+   button
+      width: 30%
+
+   .adminAdd-input
+      width: 30%
+
+.adminAdd-body
+   // gap: 1rem
+   width: 100%
+   padding-top: 1rem
+
+   .col-3
+      gap: 1rem
+      width: 100%
+      align-self: self-start
+
+.adminAdd-inp
+   width: 100%
+   gap: 1rem
+   justify-content: center
+   align-items: center
+   text-align: center
+
+   button
+      width: 30%
+      font-size: 12px
+      padding: 0.3rem  1rem
+      border-radius: var(--border-radius-2)
+      font-weight: lighter
+      align-self: self-start
+      color: var(--color-white)
+
+.adminAdd-input-select
+   text-align: center
+   font-size: 13px
+   font-weight: lighter
+   color: var(--color-muted)
+
+.adminAdd-input
+   width: 60%
+   direction: ltr
+   background: var(--color-white)
+   border-radius: var(--border-radius-2)
+   padding: 0.3rem 0.5rem
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   border: none
+
+
+   &:hover
+      box-shadow: none
+
+.adminAdd-label
+   text-align: center
+   width: 25%
+   font-size: 14px
+   font-weight: lighter
+   margin-left: 8px
+
+.admin-setting
+   border: 1px solid green
+   width: 100%
+   padding: 1rem
+
+.admin-select-account
+   text-align: center
+   background: transparent
+   font-size: 13px
+   font-weight: lighter
+   // margin: 0 auto

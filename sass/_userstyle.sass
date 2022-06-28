@@ -1,0 +1,995 @@
+//* --------- dashboard ---------
+input
+   font-size: 14px
+   font-weight: lighter
+   color: var(--color-dark)
+   text-align: center
+
+.container-dashboard
+   display: grid
+   margin: 0 auto
+   // grid: 1.8rem
+   grid-template-columns: 1fr 6fr
+   grid-template-rows: 1fr
+   width: 98vw
+   padding: 0.5rem
+   gap: 1rem
+
+   aside
+      z-index: 2
+
+      .sidebar
+         display: flex
+         flex-flow: column nowrap
+
+         //* --------- profile-card ---------
+
+         .profile:hover
+            box-shadow: none
+
+         .profile
+            display: flex
+            flex-flow: column nowrap
+            width: 100%
+            align-items: center
+            gap: 0.4rem
+            background: var(--color-white)
+            box-shadow: var(--box-shadow)
+            padding: 0.5rem
+            border-radius: var(--border-radius-dashboard)
+
+            h5
+               color: var(--color-muted)
+
+            .top
+               direction: rtl
+               padding: 0.2rem
+               display: flex
+               flex-flow: row-reverse nowrap
+               width: 100%
+               justify-content: space-between
+
+               .theme-toggler
+                  width: 10%
+
+                  span
+                     opacity: 1
+                     position: absolute
+                     cursor: pointer
+                     transition: var(--tran)
+
+                  span:hover
+                     opacity: 0.5
+
+                  span.active
+                     opacity: 0
+
+               .photo-circle
+                  display: flex
+                  border: 2px solid var(--color-offline)
+                  height: 8rem
+                  width: 8rem
+                  border-radius: 50%
+                  text-align: center
+                  padding: 0.2rem
+                  transition: var(--tran)
+
+               .notfication
+                  cursor: pointer
+                  width: 10%
+                  position: relative
+                  display: flex
+                  align-items: start
+
+               .message-count
+                  color: var(--color-white)
+                  background: var(--color-danger)
+                  width: 0.7rem
+                  height: 0.7rem
+                  border-radius: 50%
+                  position: absolute
+                  text-align: center
+                  font-size: 8px
+
+               img
+                  width: 100%
+                  border-radius: 50%
+                  // box-shadow: var(--box-shadow-2)
+
+         //* --------- menu-card ---------
+
+         .menu:hover
+            box-shadow: none
+
+         .menu
+            width: 100%
+            display: flex
+            flex-flow: column nowrap
+            margin-top: 1rem
+            background: var(--color-white)
+            border-radius: var(--border-radius-dashboard)
+            box-shadow: var(--box-shadow)
+            padding: 1rem
+            transition: var(--tran)
+
+            ul
+               align-items: center
+               list-style-type: none
+               width: 100%
+
+               a
+                  color: var(--color-dark)
+
+                  span
+                     display: none
+
+               li:first-child
+                  margin-top: 0.5rem
+
+               li
+                  padding: 0.5rem
+                  border: var(--border-input)
+                  width: 100%
+                  text-align: center
+                  border-radius: var(--border-radius-4)
+                  font-size: 0.9rem
+                  margin: 2rem auto
+                  transition: var(--tran)
+
+               li:hover
+                  box-shadow: var(--box-shadow-2)
+
+               .selected:hover
+                  box-shadow: none
+
+               .selected
+                  background: var(--color-primary)
+                  transition: var(--tran)
+
+                  a
+                     color: var(--color-white)
+
+            button
+               cursor: pointer
+               background: var(--color-danger)
+               color: var(--color-white)
+               font-family: Vazirmatn
+               width: 100%
+               border-radius: var(--border-radius-4)
+               padding: 0.5rem
+               margin-top: 3rem
+
+            .buttons
+               button.signout
+                  margin-top: 0
+
+               button.save
+                  background: var(--color-success)
+                  color: var(--color-white)
+                  font-family: Vazirmatn
+                  width: 100%
+                  margin: 0 auto 0.6rem auto
+                  border: var(--border-input)
+                  border-radius: var(--border-radius-4)
+                  padding: 0.5rem
+
+   //* --------- main-card ---------
+
+   main
+      width: 100%
+      grid-area: 1 / 2 / 2 / 3
+      display: flex
+      // display: grid
+      flex-direction: column
+      margin: 0 auto
+      grid: 1.8rem
+      grid-template-columns: 1fr
+      grid-template-rows: 1fr 3fr
+      gap: 1rem
+
+      .top
+         display: flex
+         flex-flow: row nowrap
+         gap: 2rem
+         // padding: 1rem
+         align-items: start
+
+         .card-price:hover
+            box-shadow: none
+
+         .card-price
+            display: flex
+            flex-flow: column nowrap
+            align-items: center
+            direction: rtl
+            background: var(--color-white)
+            border-radius: var(--border-radius-dashboard)
+            box-shadow: var(--box-shadow)
+            width: 100%
+            gap: 1rem
+            padding: 1rem
+            transition: var(--tran)
+            margin: 0
+
+            .line
+               width: 100%
+               background: var(--color-primary)
+               height: 0.5px
+               opacity: 0.5
+
+            #credit:hover
+               h3
+                  color: var(--color-primary)
+
+            #debt:hover
+               h3
+                  color: var(--color-primary)
+
+            #charge:hover
+               h3
+                  color: var(--color-primary)
+
+            #rent:hover
+               h3
+                  color: var(--color-primary)
+
+            #counter
+               display: flex
+               flex-flow: row nowrap
+               align-items: center
+               justify-content: center
+
+      .card-user:hover
+         box-shadow: none
+
+      //! --------- card-user and generic data of cards ---------
+
+      .card-user,.card-alert,.card-history,.card-payment
+         width: 100%
+         direction: rtl
+         transition: var(--tran)
+
+         label,span
+            color: var(--color-dark)
+            opacity: 0.8
+
+         input[type="text"]
+            border-radius: var(--border-radius-2)
+            border: var(--border-input)
+            background: var(--color-white)
+            padding: 0.5rem
+            width: 60%
+
+         input[type="radio"]
+            border-radius: var(--border-radius-2)
+            border: var(--border-input)
+            background: var(--color-white)
+            padding: 0.3rem
+            cursor: pointer
+
+         .info
+            width: 100%
+            padding: 1rem
+            display: flex
+            flex-flow: column nowrap
+            gap: 1rem
+
+            .personal, .apartment , .account
+               background: var(--color-white)
+               border-radius: var(--border-radius-2)
+               // padding: 1rem
+               font-size: 14px
+               box-shadow: var(--box-shadow)
+               transition: var(--tran)
+
+               &:hover
+                  box-shadow: none
+
+            h4
+               color: var(--color-primary)
+               text-align: right
+
+            div
+               width: 100%
+
+            #form
+               display: flex
+               // flex-flow: row nowrap
+               justify-content: space-around
+               padding: 1rem
+               align-items: center
+
+               .col-3
+                  display: flex
+                  flex-direction: column
+                  justify-content: space-between
+
+                  .field-number
+                     input
+                        width: 60%
+                        // span:hover
+                        //     opacity: 1
+                        //     cursor: pointer
+                        //     background: var(--color-primary)
+                        //     color: var(--color-white)
+                        // span
+                        //     width: 10%
+                        //     text-align: center
+                        //     border: var(--border-input)
+                        //     font-size: 1.1rem
+                        //     border-radius: var(--border-radius-2)
+                        //     padding: 0.2rem
+                        //     margin-right: 1rem
+                     label
+                        // width: 30%
+                        width: fit-content
+
+                  .form-field
+                     display: flex
+                     flex-flow: row nowrap
+                     align-items: center
+                     justify-content: space-between
+                     width: 100%
+                     padding: 0.3rem 1rem
+
+                     .file-upload-user
+                        width: 60%
+
+                        input
+                           width: 60%
+
+                     label
+                        // width: auto
+                        // width: 50%
+                        // margin-left: 2rem
+                        // text-align: left
+                     .not-editable
+                        color: var(--color-white)
+                        background-color: var(--color-dark)
+                        opacity: 0.3
+
+                     .age
+                        justify-self: start
+                        width: 60%
+                        // text-align: center
+                        font-family: Vazirmatn
+                        color: var(--color-dark)
+                        // opacity: 0.8
+                        // padding: 0.2rem
+
+                        input
+                           width: 40px
+
+                     .gender
+                        width: 30%
+
+                     .gender-radio
+                        display: flex
+                        text-align: right
+                        gap: 0.2rem
+                        width: 60%
+                        height: 40px
+                        align-items: center
+
+                        label
+                           margin-left: 1rem
+
+                        input
+                           width: auto
+                           transition: var(--tran)
+
+                        input:hover
+                           background: var(--color-dark)
+                           opacity: 0.5
+
+                        input:checked
+                           background: var(--color-dark)
+                           opacity: 1
+
+                     .custom-select
+                        width: 60%
+                        font-family: Vazirmatn
+
+                        select::-ms-expand
+                           display: none
+
+                        select:hover
+                           background: var(--color-primary)
+                           color: var(--color-white)
+
+                        select
+                           align-items: center
+                           background-color: var(--color-white)
+                           border-radius: var(--border-radius-2)
+                           border: var(--border-input)
+                           padding: 0.2rem 1rem
+                           margin: 0
+                           font-family: Vazirmatn
+                           cursor: pointer
+                           color: var(--color-dark)
+                           opacity: 0.8
+                           transition: var(--tran)
+
+                           option
+                              font-family: Vazirmatn
+                              background-color: var(--color-white)
+                              color: var(--color-dark)
+
+                     label.contract
+                        // margin: 0 0 0 2rem
+                        width: 30%
+
+                     .file-upload
+                        position: relative
+                        display: flex
+                        flex-flow: row nowrap
+                        align-items: center
+                        justify-content: right
+                        width: 60%
+                        direction: ltr
+
+                        .file
+                           opacity: 1
+                           right: 0
+                           cursor: pointer
+                           width: 50%
+                           direction: rtl
+
+                        .file::-webkit-file-upload-button
+                           margin: 0
+                           text-align: center
+                           padding: 0.2rem
+                           font-family: Vazirmatn
+                           cursor: pointer
+                           border-radius: var(--border-radius-2)
+                           border: var(--border-input)
+                           background: var(--color-white)
+                           width: 100%
+                           opacity: 0.8
+                           color: var(--color-dark)
+                           transition: var(--tran)
+
+                           &:hover
+                              background: var(--color-primary)
+                              color: var(--color-white)
+                              transition: all 500ms ease
+
+                        h5
+                           color: var(--color-muted)
+                           margin: 0 1rem
+
+      //! --------- card-history ---------
+
+      .card-history
+         background: transparent
+         box-shadow: none
+         border-radius: none
+         border: none
+
+         .info
+            background: transparent
+            border-right: var(--border-radius-2)
+
+            input
+               width: 100%
+               direction: ltr
+               background: var(--color-white)
+               border-radius: var(--border-radius-2)
+               padding: var(--padding-3)
+               box-shadow: var(--box-shadow)
+               transition: var(--tran)
+               border: none
+
+            input:hover
+               box-shadow: none
+
+            .table-body
+               display: block
+               max-height: 444px
+               overflow: auto
+               border-radius: var(--border-radius-dashboard)
+               padding-left: .5rem
+               transition: var(--tran)
+               box-shadow: var(--box-shadow)
+            .table-body:hover
+               box-shadow: none
+            .table:hover
+               box-shadow: none
+            .table
+               width: 100%
+               background: var(--color-white)
+               padding: var(--padding-5)
+               box-shadow: var(--box-shadow)
+               transition: var(--tran)
+               text-align: center
+               align-content: center
+               font-size: 14px
+               border-collapse: collapse
+               border-radius: var(--border-radius-dashboard)
+               overflow-y: scroll
+               table-layout: fixed
+               thead
+                  font-size: 14px
+                  tr
+                     border-bottom: 1px dotted #ccc
+                  th
+                     height: 2.8rem
+                     a:hover,
+                        color: var(--color-primary)
+                     a:active
+                        color: var(--color-primary)
+                     a:visited
+                        color: var(--color-primary)
+                     a:link
+                        color: var(--color-primary)
+               tr:nth-child(even)
+                  background-color: var(--color-row)
+               td
+                  height: 2.8rem
+                  color: var(--color-dark)
+
+               tbody
+                  td
+                     height: 2.8rem
+                     border-bottom: var(--border-input)
+                     color: var(--color-dark)
+
+                  td.warning
+                     color: var(--color-warning)
+
+                  td.primary
+                     color: var(--color-primary)
+
+                  td.failed
+                     color: var(--color-failed)
+
+                  td.success
+                     color: var(--color-success)
+
+                  td.expired
+                     color: var(--color-expired)
+
+                  tr:last-child
+                     td
+                        border: none
+
+      //! --------- card-alert --------- 
+
+      .card-alert
+         background: transparent
+         box-shadow: none
+         border-radius: none
+         border: none
+         font-size: 14px
+
+         h4
+            color: var(--color-primary)
+
+         .info-alert
+            width: 100%
+            background: transparent
+            gap: 1.5rem
+            padding-top: 1rem
+
+            .message
+               padding: var(--padding-3)
+               min-width: 260px
+               background: var(--color-white)
+               border-radius: var(--border-radius-2)
+               box-shadow: var(--box-shadow)
+               box-shadow: var(--box-shadow)
+               margin: 0
+               gap: 1rem
+               max-height: 453px
+               transition: var(--tran)
+               justify-content: space-around
+
+               &:hover
+                  box-shadow: none
+
+               .sendto-radio
+                  justify-content: center
+                  align-items: center
+                  gap: 0.5rem
+
+                  .sendto-item
+                     align-items: center
+                     justify-content: center
+
+                  label
+                     font-size: 10px
+
+               input[type="radio"]
+                  width: auto
+                  margin: 0.5rem
+
+                  &:hover
+                     border: 1px solid var(--color-primary)
+                     opacity: 0.5
+
+                  &:checked
+                     background: var(--color-primary)
+                     opacity: 1
+
+               textarea
+                  width: 100%
+                  background: transparent
+                  border: var(--border-input)
+                  border-radius: var(--border-radius-2)
+                  padding: 1rem
+
+               button
+                  width: 50%
+                  margin: 1rem auto 0
+                  background: var(--color-primary)
+                  color: var(--color-white)
+                  border-radius: var(--border-radius-4)
+                  padding: 0.7rem
+                  font-family: Vazirmatn
+
+            .tab-body
+               justify-content: space-between
+               width: 100%
+
+            .datepicker
+               margin: 0
+               gap: 0.5rem
+               border-radius: var(--border-radius-4)
+
+            .datepicker-input
+               font-size: 14px
+               padding: .3rem 0
+               // background-color: var(--color-white)
+               // float: right
+               outline: none
+               cursor: pointer
+               background: var(--color-white)
+               color: var(--color-dark)
+               transition: var(--tran)
+               border: 1px solid var(--color-white)
+               font-weight: lighter
+
+               &:hover
+                  opacity: 1
+                  border: 1px solid var(--color-primary)
+
+            .datepicker:fisrt-child
+               border-radius: 0 var(--border-radius-4) var(--border-radius-4) 0
+
+            .change-tabs
+               margin: 0
+               gap: 0.5rem
+               width: 100%
+
+               .tab-conv
+                  max-height: 450px
+                  overflow-y: auto
+                  padding-left: 0.5rem
+                  width: 100%
+                  border-radius: var(--border-radius-2)
+                  padding: 1rem
+                  background: var(--color-white)
+                  width: 100%
+                  box-shadow: var(--box-shadow)
+                  transition: var(--tran)
+                  &:hover
+                     box-shadow: none
+
+               #tab-conv
+                  width: 100%
+
+                  .chat
+                     margin: 0 auto
+
+                     .chat-my
+                        .chat__photo,.chat__name
+                           display: none
+
+                        .chat__body
+                           background: var(--color-mychat)
+                           border-radius: var(--border-radius-2) 0 var(--border-radius-2) var(--border-radius-2)
+
+                     .chat-other
+                        direction: ltr
+
+                        .chat__header
+                           .chat__date
+                              flex-direction: row-reverse
+
+                        .chat__body
+                           background: var(--color-dark)
+                           border-radius: 0 var(--border-radius-2) var(--border-radius-2)
+
+                        .not-verfiy
+                           background: var(--color-notverify)
+
+                     .chat__item
+                        flex-direction: column
+                        list-style-type: none
+                        margin-bottom: .5rem
+
+                        .chat__header
+                           align-items: center
+                           gap: 1%
+
+                           .chat__name
+                              color: var(--color-primary)
+                              font-weight: bold
+
+                           .chat__date
+                              width: 100%
+                              direction: rtl
+                              gap: 1%
+                              font-size: 12px
+                              display: flex
+                           .chat__photo
+                              width: 50px
+                              border-radius: 50%
+                              padding: auto
+
+                              img
+                                 border-radius: inherit
+
+                        .chat__body
+                           overflow-wrap: break-word
+                           max-width: 900px
+                           margin: 0 1rem
+                           direction: rtl
+                           color: black
+                           font-size: 14px
+                           font-weight: lighter
+                           padding: 0.5rem
+                           width: fit-content
+                           color: var(--color-white)
+
+                        .chat-file-link:visited
+                           color: var(--color-danger)
+
+                        .chat-file-link
+                           color: var(--color-danger)
+
+               .tab-alert
+                  max-height: 450px
+                  overflow-y: auto
+                  padding-left: 0.5rem
+                  width: 100%
+                  border-radius: var(--border-radius-2)
+                  padding: 1rem
+                  background: var(--color-white)
+                  width: 100%
+                  box-shadow: var(--box-shadow)
+                  transition: var(--tran)
+                  &:hover
+                     box-shadow: none
+
+               #tab-alert
+                  width: 100%
+
+                  .alert
+                     flex-direction: column
+                     width: 100%
+
+                     .alert__header
+                        text-align: center
+
+                     .alert__date
+                        border-bottom: 1px dotted #ccc
+
+                     .alert__body
+                        cursor: pointer
+                        white-space: normal
+                        margin: 0.5rem 0
+                        gap: 0.5rem
+                        align-items: center
+                        border-radius: var(--border-radius-1)
+                        padding: 0.5rem
+
+                        .user-chat__photo
+                           max-width: 30px
+                           height: 30px
+                           border-radius: var(--border-radius-4)
+
+                           img
+                              border-radius: var(--border-radius-4)
+
+                        .alert__text
+                           font-weight: lighter
+                           transition: var(--tran)
+
+                        .alert__text:hover
+                           opacity: 0.5
+                           transition: var(--tran)
+
+                        .alert__name:hover
+                           opacity: 1
+                           transition: none
+
+                        .alert__icon
+                           width: 40px !important
+
+                        .alert__icon-admin
+                           color: var(--color-admin)
+
+                        .alert__icon-setting
+                           color: var(--color-danger)
+
+                        .alert__icon-warning
+                           color: var(--color-alert)
+
+                        .alert__icon
+                           position: relative
+                           font-size: 50px
+
+      //! --------- card-payment ---------
+
+      .card-payment
+         background: transparent
+         box-shadow: none
+         border-radius: none
+         border: none
+
+         .info
+            width: 100%
+            background: transparent
+            flex-direction: column
+            justify-content: center
+            padding: 2rem 0 0 0
+
+            .payment__row
+               display: flex
+               align-items: center
+
+               .payment__input
+                  background: var(--color-white)
+                  border-radius: var(--border-radius-2)
+                  box-shadow: var(--box-shadow)
+                  padding: 0.5rem 1rem
+                  margin: 1rem
+                  justify-content: space-between
+                  transition: var(--tran)
+
+                  &:hover
+                     box-shadow: none
+
+               .payment__input-remember
+                  justify-content: flex-start
+                  gap: 0.5rem
+
+               .payment__input-75
+                  display: flex
+                  align-items: center
+                  width: 55%
+                  gap: 1rem
+                  margin: 0.5rem 1rem
+
+               .payment__input-nostyle
+                  background: transparent
+                  box-shadow: none
+
+               .payment__input-number
+                  border: none
+                  box-shadow: var(--box-shadow)
+                  transition: var(--tran)
+
+                  &:hover
+                     box-shadow: none
+
+               .payment__submit
+                  width: 20%
+                  background: var(--color-primary)
+                  border-radius: var(--border-radius-4)
+                  padding: 0.5rem
+                  color: var(--color-white)
+
+            .payment__column
+               display: flex
+               flex-direction: column
+
+               .payment__column-label
+                  margin: 0.5rem 1rem
+
+               .payment__input-textarea
+                  background: var(--color-white)
+                  box-shadow: var(--box-shadow)
+                  border-radius: var(--border-radius-2)
+                  margin: 0 1rem
+                  padding: 0.5rem 1rem
+                  transition: var(--tran)
+
+                  &:hover
+                     box-shadow: nones
+
+.testpay
+   // background: var(--color-white)
+   // margin: 0 auto
+   justify-content: center
+   align-items: center
+
+   .testpay-form
+      justify-content: center
+      align-items: center
+      gap: 1rem
+   input
+      border: var(--border-input)
+      width: 70%
+      padding: .5rem
+      border-radius: var(--border-radius-4)
+
+   button
+      width: 70%
+      padding: .5rem
+      border-radius: var(--border-radius-4)
+
+.user-header
+   padding: 0.5rem 1rem
+   align-items: center
+   justify-content: space-between
+   margin-top: 1rem
+   background: var(--color-white)
+   border-radius: var(--border-radius-2)
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   &:hover
+      box-shadow: none
+
+.user-menu
+   align-items: center
+   width: 100%
+   list-style-type: none
+   // gap: 1rem
+   cursor: pointer
+   li
+      font-size: 16px
+      padding: 0 1rem
+      border-right: 1px solid var(--color-dark)
+      a,a:hover,a:link,a:visited
+         color: var(--color-dark)
+   
+   li:nth-child(1)
+      border: none
+   li:nth-child(2)
+      border: none
+      margin-right: auto
+   li:nth-child(5)
+      margin-left: auto
+   li:nth-child(6),li:nth-child(7)
+      border: none
+   .selected
+      // background: var(--color-primary)
+      color: var(--color-primary)
+      a,a:hover,a:link,a:visited
+         color: var(--color-primary)
+
+.top
+   padding: 1rem
+   gap: 2rem
+   align-items: start
+   justify-content: space-between
+
+   .card-price:hover
+      box-shadow: none
+
+   .card-price
+      font-size: 16px
+      font-weight: normal !important
+      align-items: center
+      background: var(--color-white)
+      border-radius: var(--border-radius-dashboard)
+      box-shadow: var(--box-shadow)
+      color: var(--color-dark)
+      gap: 0.5rem
+      padding: 1rem
+      transition: var(--tran)
+      margin: 0
+
+      .line
+         width: 100%
+         background: var(--color-primary)
+         height: 1px
+         opacity: 0.5
+
+      #counter
+         display: flex
+         flex-flow: row nowrap
+         align-items: center
+         justify-content: center

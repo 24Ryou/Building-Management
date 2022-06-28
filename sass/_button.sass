@@ -1,0 +1,148 @@
+button
+   text-transform: uppercase
+   letter-spacing: 2.5px
+   border: none
+   transition: all 0.3s ease 0s
+   cursor: pointer
+   outline: none
+   &:hover
+      transform: translateY(-7px)
+      &:active
+         transform: translateY(-1px)
+.button-primary
+   background: var(--color-primary) !important
+   &:hover
+      box-shadow: 0px 15px 20px rgba(46, 125, 229, 0.4)
+.button-danger
+   background: var(--color-danger) !important
+   &:hover
+      box-shadow: 0px 15px 20px rgba(229, 46, 77, 0.4)
+.button-success
+   background: var(--color-success) !important
+   &:hover
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4)
+.button-add
+   background: var(--color-warning) !important
+   &:hover
+      box-shadow: 0px 15px 20px rgba(229, 156, 46, 0.4)
+.button-rent
+   background: var(--color-expired) !important
+   &:hover
+      box-shadow: 0px 15px 20px rgba(113, 111, 211, 0.4)
+.button-charge
+   background: var(--color-admin) !important
+   &:hover
+      box-shadow: 0px 15px 20px rgba(67, 188, 164, 0.4)
+.button-nostyle
+   transition: background 0.3s ease 0s
+   font-weight: normal
+   text-transform: none
+   &:hover,&:active
+      transform: none
+.button-search
+   background: var(--color-white)
+   align-items: center
+   justify-content: center
+   padding: 8px
+   // border: var(--border-input)
+   border-radius: 100vmax
+   box-shadow: var(--box-shadow)
+   transition: var(--tran)
+   text-transform: none
+   &:hover
+      box-shadow: none
+   &:hover,&:active
+      transform: none
+   span
+      color: var(--color-dark) !important
+      opacity: 0.5
+      transition: var(--tran)
+      &:hover
+         color: var(--color-primary) !important
+
+.button-search-reset
+   span
+      color: var(--color-dark) !important
+      opacity: 0.5
+      transition: var(--tran)
+      &:hover
+         color: var(--color-danger) !important
+
+.noletterspace
+   letter-spacing: 0
+
+.file-upload-2
+   display: flex
+   flex-flow: row wrap
+   align-items: center
+   .button-wrapper
+      position: relative
+      width: 50%
+      text-align: center
+      margin: auto
+      // transition: all 0.3s ease 0s
+      transition: var(--tran)
+      border-radius: var(--border-radius-4)
+      padding: 0.5rem
+      border: var(--border-input)
+      &:hover
+         border-radius: var(--border-radius-4)
+         box-shadow: 0px 15px 20px rgba(46, 125, 229, 0.1)
+         transform: translateY(-7px)
+      .label
+         position: relative
+         z-index: 0
+         display: inline-block
+         width: 100%
+         background: var(--color-white)
+         border-radius: var(--border-radius-4)
+         // border: var(--border-input)
+         cursor: pointer
+         color: var(--color-dark)
+         // padding: 10px 0
+         text-transform: uppercase
+         font-size: 12px
+#upload
+   display: inline-block
+   position: absolute
+   z-index: 1
+   width: 100%
+   height: 50px
+   top: 0
+   left: 0
+   opacity: 0
+   cursor: pointer
+
+.file-upload-3
+   // display: flex
+   // flex-flow: row wrap
+   // align-items: center
+   width: 60%
+   .button-wrapper
+      position: relative
+      width: 50%
+      text-align: center
+      margin: auto
+      transition: all 0.3s ease 0s
+      transition: var(--tran)
+      border-radius: var(--border-radius-4)
+      // padding: 0.5rem
+      // border: var(--border-input)
+      &:hover
+         border-radius: var(--border-radius-4)
+         box-shadow: 0px 15px 20px rgba(46, 125, 229, 0.1)
+         transform: translateY(-7px)
+      .label
+         padding: .5rem 1rem
+         position: relative
+         z-index: 0
+         display: inline-block
+         width: 100%
+         background: var(--color-white)
+         border-radius: var(--border-radius-4)
+         // border: var(--border-input)
+         cursor: pointer
+         color: var(--color-dark)
+         // padding: 10px 0
+         text-transform: uppercase
+         font-size: 12px
