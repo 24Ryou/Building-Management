@@ -161,20 +161,60 @@ if(isset($_POST['action']) && $_POST['action'] == 'save') {
 }
 
 elseif(isset($_POST['action']) && $_POST['action'] == 'delete') {
-    $delete = (isset($_POST['delete'])) ? $_POST['delete'] : "";
-    if ($delete == "") {
-        # code...
-        header("location:../php/admin-dashboard.php?admin=deletenotselect");
-        exit();
-    }
-    else {
-        foreach($delete as $key => $value) {
-            $newApartment = $pdo->query('SELECT `ac_apartment` FROM `account` WHERE ac_username='.$value.';')->fetchAll(PDO::FETCH_COLUMN);
-            $pdo->prepare('DELETE FROM `account` WHERE ac_username=?')->execute([$value]);
-            $pdo->prepare('DELETE FROM `apartment` WHERE ap_number=?')->execute([$newApartment[0]]);
+
+    if ( $_SESSION['tab'] == "apartment") {
+        
+        $delete = (isset($_POST['delete'])) ? $_POST['delete'] : "";
+        if ($delete == "") {
+            # code...
+            header("location:../php/admin-dashboard.php?admin=deletenotselect");
+            exit();
         }
-        header("location:../php/admin-dashboard.php?admin=successdelete");
-        exit();
+        else {
+            foreach($delete as $key => $value) {
+                // $newApartment = $pdo->query('SELECT `ac_apartment` FROM `account` WHERE ac_username='.$value.';')->fetchAll(PDO::FETCH_COLUMN);
+                // $pdo->prepare('DELETE FROM `account` WHERE ac_username=?')->execute([$value]);
+                $pdo->prepare('DELETE FROM `apartment` WHERE ap_number=?')->execute([$value]);
+            }
+            header("location:../php/admin-dashboard.php?admin=successdelete");
+            exit();
+        }
+    }
+    if ( $_SESSION['tab'] == "account") {
+        
+        $delete = (isset($_POST['delete'])) ? $_POST['delete'] : "";
+        if ($delete == "") {
+            # code...
+            header("location:../php/admin-dashboard.php?admin=deletenotselect");
+            exit();
+        }
+        else {
+            foreach($delete as $key => $value) {
+                // $newApartment = $pdo->query('SELECT `ac_apartment` FROM `account` WHERE ac_username='.$value.';')->fetchAll(PDO::FETCH_COLUMN);
+                $pdo->prepare('DELETE FROM `account` WHERE ac_username=?')->execute([$value]);
+                // $pdo->prepare('DELETE FROM `apartment` WHERE ap_number=?')->execute([$newApartment[0]]);
+            }
+            header("location:../php/admin-dashboard.php?admin=successdelete");
+            exit();
+        }
+    }
+    if ( $_SESSION['tab'] == "report") {
+        
+        $delete = (isset($_POST['delete'])) ? $_POST['delete'] : "";
+        if ($delete == "") {
+            # code...
+            header("location:../php/admin-dashboard.php?admin=deletenotselect");
+            exit();
+        }
+        else {
+            foreach($delete as $key => $value) {
+                // $newApartment = $pdo->query('SELECT `ac_apartment` FROM `account` WHERE ac_username='.$value.';')->fetchAll(PDO::FETCH_COLUMN);
+                $pdo->prepare('DELETE FROM `tran` WHERE orders=?')->execute([$value]);
+                $pdo->prepare('DELETE FROM `orders` WHERE order_id=?')->execute([$value]);
+            }
+            header("location:../php/admin-dashboard.php?admin=successdelete");
+            exit();
+        }
     }
 }
 
@@ -267,7 +307,7 @@ elseif (isset($_POST['action']) && $_POST['action'] == 'send') {
     }
 
     echo ("<script type='text/javascript'>
-            location.replace(\"/bm/php/admin-message.php\");
+            location.replace(\"/building-managment/php/admin-message.php\");
             </script>");
 }
 

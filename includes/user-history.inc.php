@@ -126,8 +126,8 @@ elseif (isset($_GET['search'])) {
     if(strlen($query) >= $min_length){
         $query = htmlspecialchars($query);
         $query = ($query);
-        // $sql = "SELECT * FROM `tran` WHERE `username`=? AND ((`date`LIKE '%$query%') OR (`price` LIKE '%$query%') OR (`info` LIKE '%$query%'));";
-        $_SESSION['uhistory-sql'] = "AND ((`date`LIKE '%$query%') OR (`price` LIKE '%$query%') OR (`info` LIKE '%$query%')) ";
+        // $sql = "SELECT * FROM `tran` WHERE `username`=? AND (`date`LIKE '%$query%') OR (`price` LIKE '%$query%') OR (`info` LIKE '%$query%'));";
+        $_SESSION['uhistory-sql'] .= "AND ((`date`LIKE '%$query%') OR (`price` LIKE '%$query%') OR (`info` LIKE '%$query%')) ";
         $sql_temp = "SELECT * FROM `tran` WHERE `username`=? AND ((`date`LIKE '%$query%') OR (`price` LIKE '%$query%') OR (`info` LIKE '%$query%'));";
         $stmt = $pdo->prepare($sql_temp);
         if ($stmt->execute([$_SESSION['username']])) {

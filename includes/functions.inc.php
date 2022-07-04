@@ -109,20 +109,10 @@ function createUser($pdo, $name, $lastname, $pwd, $phone)
     // Store the path of destination file
     $destination = "../data/users/" . $phone . '/profile.jpg';
     createFolder("../data/users/" . $phone);
-    sendToAdmin($pdo,$phone);
     copy($source, $destination);
     header("location:../php/signup.php?error=none");
     exit();
 }
-
-function sendToAdmin($pdo,$username) {
-    $msg = "کاربر با شناسه $username در سیستم ثبت نام کرد لطفااطلاعات اورا تکمیل کنید!";
-    $date = jdate('Y-m-d H:i:s',time(),'','Asia/Tehran','en');
-    $reciever = '1';
-    $sender = $username;
-    $pdo->prepare("INSERT INTO `message`(`date`,`text`,sender,reciever) VALUES($date,$msg,$sender,$reciever)")->execute();
-}
-
 function createUserFolder($username)
 {
     $result = null;
@@ -925,7 +915,7 @@ function apartmentTable($pdo, $limit)
                     <td><input class="inpnostyle" type="text" name="ap_gasid[]" value="' . $row['ap_gasid'] . '"></td>
                     <td>
                         <label class="switch">
-                            <input type="checkbox" name="delete[]" value="' . $row['ac_username'] . '">
+                            <input type="checkbox" name="delete[]" value="' . $row['ap_number'] . '">
                             <span class="slider"></span>
                         </label>
                     </td>
@@ -1149,7 +1139,7 @@ function reportTable($pdo, $limit)
                     <td><input class="inpnostyle" style="direction:ltr;" type="text" name="r_date[]" value="' . $row['date'] . '"></td>
                     <td>
                         <label class="switch">
-                            <input type="checkbox" name="delete[]" value="' . $row['ac_username'] . '">
+                            <input type="checkbox" name="delete[]" value="' . $row['orders'] . '">
                             <span class="slider"></span>
                         </label>
                     </td>
